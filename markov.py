@@ -57,26 +57,25 @@ def make_chains(text_string):
 
 def make_text(chains):
     """Return text from chains."""
-    chain_keys = sorted(chains)
+    # chain_keys = sorted(chains)
     words = []
-    word_link = choice(chain_keys)
+    # word_link = choice(chain_keys)
     # words = words + list(word_link)
+    word_link = choice(list(chains.keys()))
     
     # while True:
     #     if word_link not in chain_keys:
     #         break
+    while word_link in chains:
 
-    #     # create variable that equals random value of key(word_link)
-    #     # append variable of key(word_link) from chains to words(list)
-    #     # redefine word_link variable to equal second index of word_link & the random variable
+        # create variable that equals random value of key(word_link)
+        # append variable of key(word_link) from chains to words(list)
+        # redefine word_link variable to equal second index of word_link & the random variable
 
-    random_key_value = choice(chains[word_link])
-    words.append(random_key_value)
-    print(word_link)
-    print(random_key_value)
-    print(words)
-
-    # your code goes here
+        random_key_value = choice(chains[word_link])
+        words.append(random_key_value)
+        word_link = (word_link[1], random_key_value)
+    
 
     return ' '.join(words)
 
