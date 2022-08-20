@@ -53,13 +53,28 @@ def make_chains(text_string):
     # print('CHAINS', chains)
     return chains
 
-print(make_chains(open_and_read_file('green-eggs.txt')))
+# print(make_chains(open_and_read_file('green-eggs.txt')))
 
 def make_text(chains):
     """Return text from chains."""
-    # chain_keys = sorted(chains)
+    chain_keys = sorted(chains)
     words = []
+    word_link = choice(chain_keys)
+    # words = words + list(word_link)
     
+    # while True:
+    #     if word_link not in chain_keys:
+    #         break
+
+    #     # create variable that equals random value of key(word_link)
+    #     # append variable of key(word_link) from chains to words(list)
+    #     # redefine word_link variable to equal second index of word_link & the random variable
+
+    random_key_value = choice(chains[word_link])
+    words.append(random_key_value)
+    print(word_link)
+    print(random_key_value)
+    print(words)
 
     # your code goes here
 
